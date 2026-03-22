@@ -1,0 +1,15 @@
+- name: Collect Ubuntu System Information
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Display Distribution Version
+      debug:
+        var: ansible_facts['distribution_version']
+
+    - name: Display All IPv4 Addresses
+      debug:
+        var: ansible_facts['all_ipv4_addresses']
+
+    - name: Display Memory Information
+      debug:
+        var: ansible_facts['memtotal_mb']
